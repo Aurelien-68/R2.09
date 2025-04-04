@@ -8,17 +8,19 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<form action="#" method="post">
+<form action="firstapp/rep" method="post">
+    {%csrf_token%}
     <label for="1">Nom:</label>
-    <input id="1" type="text"/>
+    <input id="1" type="text" name="nom"/>
     <label for="2">Email:</label>
-    <input id="2" type="email"/>
+    <input id="2" type="email" name="email"/>
     <label for="3">Sujet:</label>
-    <input id="3" type="text"/>
+    <input id="3" type="text" name="sujet"/>
     <label for="4">Message:</label>
-    <textarea id="4" ></textarea>
-    <input type="submit">
+    <textarea id="4" name="message"></textarea>
+    <input type="submit" value="envoyer">
 
 </form>
+
 </body>
 </html>
