@@ -21,8 +21,9 @@ border-radius: 4px;
 width:240px
 }
 body{
-color:#E0E0E0;
+background-color:#E0E0E0;
 text-align: center;
-max-width:600px
+max-width:600px;
 
 }
+
