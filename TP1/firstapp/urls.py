@@ -6,5 +6,5 @@ urlpatterns = [
 
 path('ajout', views.ajout),
 path('traitement', views.traitement),
-path('/affiche/<int:id>/',views.read),
+path('affiche/<int:id>/',views.read),
 ]
