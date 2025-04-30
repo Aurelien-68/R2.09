@@ -14,12 +14,17 @@
         <div class="flex_item_all">
             <div class="traitement">
                 {{donnees|safe}}
+                <form method="post" action="/firstapp/traitementupdate/{{id}}">
+                {% csrf_token %}
+                {{ form.as_ul }}
+                <input type="submit" value="Mettre a jour"\>
+                </form>
             </div>
             <div class="boutons_all">
+
             </div>
         </div>
         {% endfor %}
     </main>
-
 </body>
 </html>

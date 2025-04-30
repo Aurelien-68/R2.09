@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+
+<h1>UPDATE</h1>
+<form method="post" action="/firstapp/traitement/">
+{% csrf_token %}
+{{ form.as_ul }} <!-- permet d'afficher tous les champs sous forme d'une liste
+-->
+<input type="submit" value="envoyer␣les␣données"\>
+</form>
+</body>
+</html>
