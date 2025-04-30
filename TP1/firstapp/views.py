@@ -20,10 +20,10 @@ def traitement(request):
     lform = LivreForm(request.POST)
     if lform.is_valid():
         Livre = lform.save()
-        return render(request,"bibliotheque/affiche.html",{"Livre" : Livre})
+        return render(request,"firstapp/affiche.html",{"Livre" : Livre})
     else:
-        return render(request,"bibliotheque/ajout.html",{"form": lform})
+        return render(request,"firstapp/ajout.html",{"form": lform})
 
 def read(request, id):
     Livre = models.Livre.objects.get(pk=id) # méthode pour récupérer les données dans la base avec un id donnée
-    return render(request,"bibliotheque/affiche.html",{"Livre": Livre})
+    return render(request,"firstapp/affiche.html",{"Livre": Livre})
