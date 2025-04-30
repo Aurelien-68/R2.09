@@ -19,11 +19,14 @@ def ajout(request):
 def traitement(request):
     lform = LivreForm(request.POST)
     if lform.is_valid():
-        Livre = lform.save()
-        return render(request,"firstapp/affiche.html",{"Livre" : Livre})
+        liste_data = list(models.Livre.objects.all())
+        return render(request, "firstapp/VUE_affiche_all.html", {"liste": liste_data})
     else:
         return render(request,"firstapp/ajout.html",{"form": lform})
 
+def afficher_all(request):
+    liste_data=list(models.Livre.objects.all())
+    return render(request,"firstapp/VUE_affiche_all.html",{"liste":liste_data})
 def read(request, id):
     Livre = models.Livre.objects.get(pk=id) # méthode pour récupérer les données dans la base avec un id donnée
     return render(request,"firstapp/affiche.html",{"Livre": Livre})

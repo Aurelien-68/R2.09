@@ -4,7 +4,8 @@ from . import views
 
 urlpatterns = [
 
-path('ajout', views.ajout),
-path('traitement', views.traitement),
+path('ajout/', views.ajout),
+path('traitement/', views.traitement),
 path('affiche/<int:id>/',views.read),
+path('affiche_all/',views.afficher_all),
 ]
