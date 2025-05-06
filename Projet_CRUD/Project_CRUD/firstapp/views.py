@@ -17,7 +17,11 @@ def ajoutMarque(request):
 def traitementMarque(request):
     lform = Formulaire_Marque(request.POST)
     if lform.is_valid():
-        Livre = lform.save()
-        return render(request,"marque/afficheMarque.html",{"Marque" : Marque})
+        Marque = lform.save()
+        return render(request,"marque/affiche_Marque.html",{"Marque" : Marque})
     else:
-        return render(request,"marque/ajoutMarque.html",{"form": lform})
+        return render(request,"marque/ajout_Marque.html",{"form": lform})
+
+def readMarque(request, id):
+    Marque = models.Marque.objects.get(pk=id) # méthode pour récupérer les données dans la base avec un id donnée
+    return render(request,"marque/affiche_Marque.html",{"Marque": Marque})
