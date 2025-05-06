@@ -6,7 +6,7 @@ from django import forms
 class Formulaire_Marque(ModelForm):
     class Meta:
         model = models.Marque
-        fields = ['nom', 'date_creation', 'autre']
+        fields = ['nom', 'date_creation', 'createur','autre']
         labels = {
             'nom': _('Nom '),
             'date_creation': _('Date_creation '),
