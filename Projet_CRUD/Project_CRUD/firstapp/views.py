@@ -1,3 +1,23 @@
-from django.shortcuts import render
 
-# Create your views here.
+from django.shortcuts import render
+from .forms import Formulaire_Marque
+from . import models
+def ajoutMarque(request):
+    if request.method == "POST": # arrive en cas de retour sur cette page après une saisie invalide on récupère donc les données. Normalement nous ne devrions pas passer par ce chemin la pour le traitement des données
+        form = Formulaire_Marque(request)
+        if form.is_valid(): # validation du formulaire.
+            Marque = form.save() # sauvegarde dans la base
+            return render(request,"marque/affiche_Marque.html",{"Marque" : Marque}) #envoie vers une page d'affichage du Livre créé
+        else:
+            return render(request,"marque/ajout_Marque.html",{"form": form})
+    else:
+        form = Formulaire_Marque()
+        return render(request,"marque/ajout_Marque.html",{"form" : form})
+
+def traitementMarque(request):
+    lform = Formulaire_Marque(request.POST)
+    if lform.is_valid():
+        Livre = lform.save()
+        return render(request,"marque/afficheMarque.html",{"Marque" : Marque})
+    else:
+        return render(request,"marque/ajoutMarque.html",{"form": lform})
