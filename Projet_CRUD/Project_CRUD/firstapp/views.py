@@ -26,7 +26,7 @@ def readMarque(request, id):
     Marque = models.Marque.objects.get(pk=id) # méthode pour récupérer les données dans la base avec un id donnée
     return render(request,"marque/affiche_Marque.html",{"Marque": Marque})
 
-def traitementupdate(request, id):
+def traitementupdateMarque(request, id):
     lform = Formulaire_Marque(request.POST)
     if lform.is_valid():
         Marque = lform.save(commit=False)
