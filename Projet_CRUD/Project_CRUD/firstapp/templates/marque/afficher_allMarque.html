@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+{% load static %}
+<link rel="stylesheet" href="{% static 'app1/style.css' %}">
+<meta charset="UTF-8">
+<title>Page affichage ALL Marque</title>
+</head>
+<body>
+<h1> Liste des enregistrements dans la Base de Données Marque</h1>
+<a class="btn_generic" href="/app1/ROUTE_formulaire/"> Ajouter un enregistrement</a>
+<main class="flex_conteneur_all">
+{% for data in liste %}
+<div class="flex_item_all">
+<div class="traitement">
+
+{{data|safe}}
+</div>
+<div class="boutons_all">
+    <a href="/marque/afficheMarque/{{data.id}}/">Affichage détails…</a>
+</div>
+</div>
+{% endfor %}
+</main>
+</body>
+</html>

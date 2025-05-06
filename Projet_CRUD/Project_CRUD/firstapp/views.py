@@ -26,12 +26,6 @@ def readMarque(request, id):
     Marque = models.Marque.objects.get(pk=id) # méthode pour récupérer les données dans la base avec un id donnée
     return render(request,"marque/affiche_Marque.html",{"Marque": Marque})
 
-def traitementupdateMarque(request, id):
-    lform = Formulaire_Marque(request.POST)
-    if lform.is_valid():
-        Marque = lform.save(commit=False)
-        Marque.id = id; # modification de l'id de l'objet
-        Marque.save() # mise à jour dans la base puisque l'id du Livre existe déja.
-        return HttpResponseRedirect("/marque/")
-    else:
-        return render(request, "marque/update_Marque.html", {"form": lform, "id": id})
+def afficherMarque_all(request):
+    liste_data = list(models.Marque.objects.all())
+    return render(request, "marque/afficher_allMarque.html", {"liste": liste_data})
