@@ -7,7 +7,7 @@ class Marque(models.Model):
     autre=models.TextField(null = True, blank = True)
 
     def __str__(self):
-        chaine = f"La marque {self.nom} a été crée en {self.date_creation} par {self.createur} "
+        chaine = f" {self.nom}  "
         return chaine
 
     def make_dico(self):
