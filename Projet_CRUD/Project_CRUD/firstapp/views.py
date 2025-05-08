@@ -29,3 +29,9 @@ def readMarque(request, id):
 def afficherMarque_all(request):
     liste_data = list(models.Marque.objects.all())
     return render(request, "marque/afficher_allMarque.html", {"liste": liste_data})
+
+def updateMarque(request, id):
+    data = models.Marque.objects.get(pk=id)
+    dico = data.make_dico()
+    formulaire_avant_modif = Formulaire_Marque(dico)
+    return render(request, "app1/VUE_formulaire.html", {"formulaire": formulaire_avant_modif, "id": id})

@@ -9,3 +9,6 @@ class Marque(models.Model):
     def __str__(self):
         chaine = f"La marque {self.nom} a été crée en {self.date_creation} par {self.createur} "
         return chaine
+
+    def make_dico(self):
+        return {"nom": self.nom, "date_creation":self.date_creation,"createur":self.createur, "autre": self.autre}

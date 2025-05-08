@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1> Liste des enregistrements dans la Base de Données Marque</h1>
-<a class="btn_generic" href="/app1/ROUTE_formulaire/"> Ajouter un enregistrement</a>
+<a class="btn_generic" href="/marque/ajoutMarque/"> Ajouter un enregistrement</a>
 <main class="flex_conteneur_all">
 {% for data in liste %}
 <div class="flex_item_all">
@@ -17,7 +17,7 @@
 {{data|safe}}
 </div>
 <div class="boutons_all">
-    <a href="/marque/afficheMarque/{{data.id}}/">Affichage détails…</a>
+    <a href="/marque/afficheMarque/{{data.id}}/">Afficher détails…</a>
 </div>
 </div>
 {% endfor %}

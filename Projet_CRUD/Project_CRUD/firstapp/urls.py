@@ -22,5 +22,6 @@ urlpatterns = [
 path('ajoutMarque/', views.ajoutMarque),
 path('traitementMarque/', views.traitementMarque), # ajouter la route traitement associé à l'action traitement du fichier views.py
 path('afficheMarque/<int:id>/',views.readMarque),
-path("Marque_all/", views.afficherMarque_all),
+path('Marque_all/', views.afficherMarque_all),
+path('updateMarque/<int:id>/',views.updateMarque),
 ]
