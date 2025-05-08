@@ -10,7 +10,7 @@
 {% if not id %}
 <form class="form" action="/marque/traitementMarque/" method="POST">
 {% else %}
-<form class="form" action="/marque/traitementupdateMarque/{{id}}/" method="POST">
+<form class="form" action="/marque/sauvegarder_modifMarque/{{id}}/" method="POST">
 {% endif %}
 
     {% csrf_token %}

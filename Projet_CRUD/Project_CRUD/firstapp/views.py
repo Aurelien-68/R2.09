@@ -36,27 +36,15 @@ def updateMarque(request, id):
     formulaire_avant_modif = Formulaire_Marque(dico)
     return render(request, "marque/ajout_Marque.html", {"form": formulaire_avant_modif, "id": id})
 
-def traitementupdateMarque(request, id):
-    lform = Formulaire_Marque(request.POST)
-    if lform.is_valid():
-        Marque = lform.save(commit=False) # création d'un objet Livre avec les données du formulaire mais sans l'enregistrer dans la base.
-        Marque.id = id; # modification de l'id de l'objet
-        Marque.save() # mise à jour dans la base puisque l'id du Livre existe déja.
-        return HttpResponseRedirect("/marque/Marque_all") # plutot que d'avoir un gabarit pour nous indiquer que cela c'est bien passé, nous repartons sur une autre action qui renvoie vers la page d'index de notre site (celle avec la liste des entrées)
-    else:
-        return render(request, "marque/update_Marque.html", {"form": lform, "id": id})
-
-
-
 def sauvegarder_modifMarque(request, id):
     formulaire_avec_modif = Formulaire_Marque(request.POST)
     if formulaire_avec_modif.is_valid():
         sauvegarde = formulaire_avec_modif.save(commit=False)
         sauvegarde.id = id
         sauvegarde.save()
-        return HttpResponseRedirect("marque/Marque_all/")
+        return HttpResponseRedirect("/marque/Marque_all/")
     else:
-        return render(request, "marque/ajout_Marque.html", {"formulaire": formulaire_avec_modif , "id": id})
+        return render(request, "/marque/ajout_Marque.html", {"formulaire": formulaire_avec_modif , "id": id})
 
 
 
