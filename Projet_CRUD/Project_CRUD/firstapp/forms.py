@@ -13,3 +13,15 @@ class Formulaire_Marque(ModelForm):
             'createur': _('createur '),
             'autre': _('Autre information '),
         }
+
+class Formulaire_Modele(ModelForm):
+    class Meta:
+        model = models.Modele
+        fields = ['nom', 'anne_creation', 'puissance','poid','autre']
+        labels = {
+            'nom': _('Nom '),
+            'anne_creation': _('anne_creation '),
+            'puissance': _('puissance '),
+            'poid': _('poid '),
+            'autre': _('Autre information '),
+        }

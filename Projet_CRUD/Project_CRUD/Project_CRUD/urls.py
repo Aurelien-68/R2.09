@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', lambda request: redirect('/marque/Marque_all')),
     path('marque/', include('firstapp.urls')),
+    path('modele/', include('firstapp.urls')),
 ]

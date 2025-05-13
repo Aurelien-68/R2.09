@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Title</title>
+</head>
+<body>
+
+
+<form class="form" action="/modele/traitementModele/{{id}}/" method="POST">
+
+
+    {% csrf_token %}
+{{ form.as_ul }} <!-- permet d'afficher tous les champs sous forme d'une liste
+-->
+<input type="submit" value="envoyer␣les␣données"\>
+</form>
+    <p><a class="btn_generic" href="/marque/Marque_all/"> Voir toutes les marques</a></p>
+
+</body>
+</html>
