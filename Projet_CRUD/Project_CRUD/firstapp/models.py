@@ -15,7 +15,7 @@ class Marque(models.Model):
 
 class Modele(models.Model):
     nom=models.CharField(max_length=100,blank=False)
-    anne_creation=models.IntegerField(blank=False)
+    annee_creation=models.IntegerField(blank=False)
     puissance=models.IntegerField(blank=False)
     poid=models.IntegerField(blank=False)
     autre = models.TextField(null=True, blank=True)
@@ -25,4 +25,4 @@ class Modele(models.Model):
         return chaine
 
     def make_dico(self):
-        return {"nom": self.nom, "annee_creation":self.date_creation,"puissance":self.createur, "poid":self.poid,"autre": self.autre, "marque":self.marque}
+        return {"nom": self.nom, "annee_creation":self.annee_creation,"puissance":self.puissance, "poid":self.poid,"autre": self.autre, "marque":self.marque}

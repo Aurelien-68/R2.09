@@ -12,5 +12,21 @@
     <p><a class="btn_generic" href="/modele/ajoutModele/{{Marque.id}}/"> Ajouter un modele de voiture</a> </p>
     <p><a class="btn_generic" href="/marque/Marque_all/"> Voir toutes les marques</a> </p>
 
+
+<ol>
+    Liste de voitures de cette marque:
+    {% for l in liste %}
+        <li>{{l.nom}}</li>
+
+
+
+    <div class="boutons_all">
+        <p><a href="/modele/afficheModele/{{l.id}}/">Afficher détails…</a> <a href="/modele/updateModele/{{l.id}}/">Mettre à jour…</a> <a href="/modele/supprimerModele/{{l.id}}/">Supprimer !</a></p>
+    </div>
+
+
+    {% endfor %}
+
+</ol>
 </body>
 </html>

@@ -23,8 +23,9 @@ def traitementMarque(request):
         return render(request,"marque/ajout_Marque.html",{"form": lform})
 
 def readMarque(request, id):
-    Marque = models.Marque.objects.get(pk=id) # méthode pour récupérer les données dans la base avec un id donnée
-    return render(request,"marque/affiche_Marque.html",{"Marque": Marque})
+    Marque = models.Marque.objects.get(pk=id)
+    liste =models.Modele.objects.filter(marque_id=id)
+    return render(request,"marque/affiche_Marque.html",{"Marque": Marque,"liste":liste})
 
 def afficherMarque_all(request):
     liste_data = list(models.Marque.objects.all())

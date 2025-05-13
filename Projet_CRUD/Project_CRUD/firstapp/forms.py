@@ -17,10 +17,10 @@ class Formulaire_Marque(ModelForm):
 class Formulaire_Modele(ModelForm):
     class Meta:
         model = models.Modele
-        fields = ['nom', 'anne_creation', 'puissance','poid','autre']
+        fields = ['nom', 'annee_creation', 'puissance','poid','autre']
         labels = {
             'nom': _('Nom '),
-            'anne_creation': _('anne_creation '),
+            'annee_creation': _('annee_creation '),
             'puissance': _('puissance '),
             'poid': _('poid '),
             'autre': _('Autre information '),

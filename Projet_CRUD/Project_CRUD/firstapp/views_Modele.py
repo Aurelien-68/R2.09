@@ -7,7 +7,7 @@ def ajoutModele(request, id):
     return render(request,"modele/ajout_Modele.html", {"form":form, "id":id})
 
 def traitementModele(request, id):
-    marque=models.Marque.object.get(pk=id)
+    marque=models.Marque.objects.get(pk=id)
     lform = Formulaire_Modele(request.POST)
     if lform.is_valid():
         Modele = lform.save(commit=False)
