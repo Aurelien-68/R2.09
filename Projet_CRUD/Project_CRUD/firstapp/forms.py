@@ -9,8 +9,8 @@ class Formulaire_Marque(ModelForm):
         fields = ['nom', 'date_creation', 'createur','autre']
         labels = {
             'nom': _('Nom '),
-            'date_creation': _('Date_creation '),
-            'createur': _('createur '),
+            'date_creation': _('Date creation '),
+            'createur': _('Createur '),
             'autre': _('Autre information '),
         }
 
@@ -20,8 +20,8 @@ class Formulaire_Modele(ModelForm):
         fields = ['nom', 'annee_creation', 'puissance','poid','autre']
         labels = {
             'nom': _('Nom '),
-            'annee_creation': _('annee_creation '),
-            'puissance': _('puissance '),
-            'poid': _('poid '),
+            'annee_creation': _('Annee creation '),
+            'puissance': _('Puissance (ch)'),
+            'poid': _('Poids (kg)'),
             'autre': _('Autre information '),
         }

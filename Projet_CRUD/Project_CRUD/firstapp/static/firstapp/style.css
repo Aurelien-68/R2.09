@@ -8,7 +8,7 @@ body {
     margin: 0;
 }
 
-/* Sections bien séparées */
+
 section {
     background-color: white;
     padding: 20px;
@@ -18,18 +18,15 @@ section {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Paragraphes lisibles */
 p {
     margin-bottom: 12px;
 }
 
-/* Titres de section */
 h1, h2, h3 {
     color: #2c3e50;
     margin-bottom: 10px;
 }
 
-/* Bouton générique centré */
 .btn_generic {
     display: inline-block;
     padding: 12px 24px;
@@ -42,7 +39,6 @@ h1, h2, h3 {
     text-align: center;
 }
 
-/* Liste des modèles */
 .liste_all {
     list-style-type: none;
     padding: 0;
@@ -82,7 +78,6 @@ h1, h2, h3 {
 }
 
 
-/* Titre */
 h1 {
     color: dodgerblue;
     text-align: center;
@@ -91,7 +86,6 @@ h1 {
 
 
 
-/* Conteneur général */
 .flex_conteneur_all {
     display: flex;
     flex-wrap: wrap;
@@ -101,7 +95,6 @@ h1 {
     margin: 0 auto;
 }
 
-/* Chaque carte de marque */
 .flex_item_all {
     background-color: white;
     border-radius: 10px;
@@ -114,13 +107,11 @@ h1 {
     justify-content: space-between;
 }
 
-/* Texte de la marque */
 .traitement {
     font-size: 16px;
     margin-bottom: 15px;
 }
 
-/* Liens dans les boutons */
 .boutons_all p {
     display: flex;
     justify-content: center;
@@ -145,7 +136,6 @@ h1 {
     background-color: #388e3c;
 }
 
-/* Section formulaire */
 .formulaire_section {
     background-color: white;
     padding: 30px;
@@ -155,13 +145,11 @@ h1 {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Formulaire lui-même */
 .form {
     display: flex;
     flex-direction: column;
 }
 
-/* Liste UL générée par form.as_ul */
 .form ul {
     list-style: none;
     padding: 0;
@@ -190,7 +178,6 @@ h1 {
     font-size: 16px;
 }
 
-/* Bouton de soumission */
 .btn_submit {
     margin-top: 20px;
     padding: 12px 20px;
@@ -208,7 +195,6 @@ h1 {
     background-color: #388e3c;
 }
 
-/* Section de détails */
 .detail_section {
     background-color: white;
     padding: 30px;
@@ -220,14 +206,12 @@ h1 {
     line-height: 1.6;
 }
 
-/* Titres dans la section */
 .detail_section h1 {
     color: dodgerblue;
     margin-bottom: 20px;
     text-align: center;
 }
 
-/* Paragraphes bien espacés */
 .detail_section p {
     margin-bottom: 12px;
 }
