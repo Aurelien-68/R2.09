@@ -1,22 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'firstapp/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Modifier un Modèle</title>
 </head>
 <body>
 
+<section class="formulaire_section">
+    <h1>Modifier un Modèle</h1>
 
+    <form class="form" action="/modele/sauvegarder_modifModele/{{id}}/" method="POST">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <input class="btn_submit" type="submit" value="Envoyer les données">
+    </form>
 
-<form class="form" action="/modele/sauvegarder_modifModele/{{id}}/" method="POST">
-
-
-    {% csrf_token %}
-{{ form.as_ul }} <!-- permet d'afficher tous les champs sous forme d'une liste
--->
-<input type="submit" value="envoyer␣les␣données"\>
-</form>
-    <p><a class="btn_generic" href="/marque/Marque_all/"> Voir toutes les marques</a></p>
+    <p><a class="btn_generic" href="/marque/Marque_all/">Voir toutes les marques</a></p>
+</section>
 
 </body>
 </html>

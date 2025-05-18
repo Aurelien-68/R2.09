@@ -1,27 +1,32 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-{% load static %}
-<link rel="stylesheet" href="{% static 'app1/style.css' %}">
-<meta charset="UTF-8">
-<title>Page affichage ALL Marque</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'firstapp/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Page affichage ALL Marque</title>
 </head>
 <body>
-<h1> Liste des enregistrements dans la Base de Données Marque</h1>
-<a class="btn_generic" href="/marque/ajoutMarque/"> Ajouter un enregistrement</a>
-<main class="flex_conteneur_all">
-{% for data in liste %}
-<div class="flex_item_all">
-<div class="traitement">
 
-{{data|safe}}
-</div>
-<div class="boutons_all">
-    <p><a href="/marque/afficheMarque/{{data.id}}/">Afficher détails…</a> <a href="/marque/updateMarque/{{data.id}}/">Mettre à jour…</a> <a href="/marque/supprimerMarque/{{data.id}}/">Supprimer !</a></p>
-</div>
+    <h1>Liste des enregistrements dans la base de données Marque</h1>
+    <a class="btn_generic" href="/marque/ajoutMarque/">Ajouter un enregistrement</a>
 
-</div>
-{% endfor %}
-</main>
+    <main class="flex_conteneur_all">
+        {% for data in liste %}
+            <div class="flex_item_all">
+                <div class="traitement">
+                    {{ data|safe }}
+                </div>
+                <div class="boutons_all">
+                    <p>
+                        <a href="/marque/afficheMarque/{{data.id}}/">Afficher détails</a>
+                        <a href="/marque/updateMarque/{{data.id}}/">Mettre à jour</a>
+                        <a href="/marque/supprimerMarque/{{data.id}}/">Supprimer</a>
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+    </main>
+
 </body>
 </html>

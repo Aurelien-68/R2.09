@@ -1,24 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Title</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'firstapp/style.css' %}">
+    <meta charset="UTF-8">
+    <title>{% if not id %}Ajouter une Marque{% else %}Modifier la Marque{% endif %}</title>
 </head>
 <body>
 
+<section class="formulaire_section">
+    <h1>{% if not id %}Ajouter une Marque{% else %}Modifier la Marque{% endif %}</h1>
 
-{% if not id %}
-<form class="form" action="/marque/traitementMarque/" method="POST">
-{% else %}
-<form class="form" action="/marque/sauvegarder_modifMarque/{{id}}/" method="POST">
-{% endif %}
+    {% if not id %}
+        <form class="form" action="/marque/traitementMarque/" method="POST">
+    {% else %}
+        <form class="form" action="/marque/sauvegarder_modifMarque/{{id}}/" method="POST">
+    {% endif %}
 
-    {% csrf_token %}
-{{ form.as_ul }} <!-- permet d'afficher tous les champs sous forme d'une liste
--->
-<input type="submit" value="envoyer␣les␣données"\>
-</form>
-    <p><a class="btn_generic" href="/marque/Marque_all/"> Voir toutes les marques</a></p>
+        {% csrf_token %}
+        {{ form.as_ul }}
+
+        <input class="btn_submit" type="submit" value="Envoyer les données">
+    </form>
+
+    <p><a class="btn_generic" href="/marque/Marque_all/">Voir toutes les marques</a></p>
+</section>
 
 </body>
 </html>

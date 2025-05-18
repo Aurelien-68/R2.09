@@ -1,0 +1,237 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f2f2f2;
+    color: #333;
+    padding: 20px;
+    margin: 0;
+}
+
+/* Sections bien séparées */
+section {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Paragraphes lisibles */
+p {
+    margin-bottom: 12px;
+}
+
+/* Titres de section */
+h1, h2, h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Bouton générique centré */
+.btn_generic {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: brown;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    margin-top: 15px;
+    text-align: center;
+}
+
+/* Liste des modèles */
+.liste_all {
+    list-style-type: none;
+    padding: 0;
+}
+
+.liste_all li {
+    background-color: #fafafa;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-left: 5px solid #4caf50;
+    border-radius: 6px;
+}
+
+.liste_all h3 {
+    margin: 0 0 10px 0;
+}
+
+.liste_all p {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.liste_all a {
+    background-color: #4caf50;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.liste_all a:hover {
+    background-color: #388e3c;
+}
+
+
+/* Titre */
+h1 {
+    color: dodgerblue;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+/* Conteneur général */
+.flex_conteneur_all {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Chaque carte de marque */
+.flex_item_all {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Texte de la marque */
+.traitement {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Liens dans les boutons */
+.boutons_all p {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 0;
+}
+
+.boutons_all a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #4caf50;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.boutons_all a:hover {
+    background-color: #388e3c;
+}
+
+/* Section formulaire */
+.formulaire_section {
+    background-color: white;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Formulaire lui-même */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Liste UL générée par form.as_ul */
+.form ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.form li {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form input[type="text"],
+.form input[type="date"],
+.form input[type="number"],
+.form textarea,
+.form select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+/* Bouton de soumission */
+.btn_submit {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn_submit:hover {
+    background-color: #388e3c;
+}
+
+/* Section de détails */
+.detail_section {
+    background-color: white;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Titres dans la section */
+.detail_section h1 {
+    color: dodgerblue;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Paragraphes bien espacés */
+.detail_section p {
+    margin-bottom: 12px;
+}
+
+
+
+

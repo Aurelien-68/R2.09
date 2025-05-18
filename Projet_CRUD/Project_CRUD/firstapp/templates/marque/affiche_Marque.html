@@ -1,32 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<title>Affichage d'une Marque</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'firstapp/style.css' %}">
+    <meta charset="UTF-8">
+    <title>Affichage d'une Marque</title>
 </head>
 <body>
-<p>La marque {{Marque.nom}} a été crée par {{Marque.createur}} en {{Marque.date_creation}} son ID est {{Marque.id}} </p>
-<p>Autre informations sur la marque: </p>
-<p>{{Marque.autre}}</p>
 
-    <p><a class="btn_generic" href="/modele/ajoutModele/{{Marque.id}}/"> Ajouter un modele de voiture</a> </p>
-    <p><a class="btn_generic" href="/marque/Marque_all/"> Voir toutes les marques</a> </p>
+    <section class="marque_detail">
+        <h1>Marque : {{ Marque.nom }}</h1>
+        <p><strong>Créateur :</strong> {{ Marque.createur }}</p>
+        <p><strong>Date de création :</strong> {{ Marque.date_creation }}</p>
+        <p><strong>ID :</strong> {{ Marque.id }}</p>
+        <p><strong>Autres informations :</strong> {{ Marque.autre }}</p>
+    </section>
 
+    <section class="ajout_modele">
+        <a class="btn_generic" href="/modele/ajoutModele/{{Marque.id}}/">Ajouter un modèle de voiture</a>
+    </section>
 
-<ol>
-    Liste de voitures de cette marque:
-    {% for l in liste %}
-        <li>{{l.nom}}</li>
+    <section class="liste_modeles">
+        <h2>Liste des voitures de cette marque</h2>
+        <ul class="liste_all">
+            {% for l in liste %}
+                <li>
+                    <h3>{{ l.nom }}</h3>
+                    <p>
+                        <a href="/modele/afficheModele/{{l.id}}/">Afficher détails</a>
+                        <a href="/modele/updateModele/{{l.id}}/">Mettre à jour</a>
+                        <a href="/modele/supprimerModele/{{l.id}}/">Supprimer</a>
+                    </p>
+                </li>
+            {% endfor %}
+        </ul>
+    </section>
 
+    <p><a class="btn_generic" href="/marque/Marque_all/">Voir toutes les marques</a></p>
 
-
-    <div class="boutons_all">
-        <p><a href="/modele/afficheModele/{{l.id}}/">Afficher détails…</a> <a href="/modele/updateModele/{{l.id}}/">Mettre à jour…</a> <a href="/modele/supprimerModele/{{l.id}}/">Supprimer !</a></p>
-    </div>
-
-
-    {% endfor %}
-
-</ol>
 </body>
 </html>
