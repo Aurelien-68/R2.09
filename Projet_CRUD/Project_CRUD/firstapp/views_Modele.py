@@ -2,6 +2,10 @@
 from django.shortcuts import render, HttpResponseRedirect
 from .forms import Formulaire_Modele
 from . import models
+from django.shortcuts import get_object_or_404
+
+
+
 def ajoutModele(request, id):
     form=Formulaire_Modele
     return render(request,"modele/ajout_Modele.html", {"form":form, "id":id})
@@ -31,18 +35,25 @@ def updateModele(request, id):
     return render(request, "modele/update_Modele.html", {"form": formulaire_avant_modif, "id": id})
 
 def sauvegarder_modifModele(request, id):
-    formulaire_avec_modif = Formulaire_Modele(request.POST)
+    # 1. On récupère le Modele existant
+    modele = get_object_or_404(models.Modele, pk=id)
+
+    # 2. On passe l'instance au formulaire pour que Django fasse la mise à jour
+    formulaire_avec_modif = Formulaire_Modele(request.POST, instance=modele)
+
     if formulaire_avec_modif.is_valid():
-        sauvegarde = formulaire_avec_modif.save(commit=False)
-        sauvegarde.id = id
-        sauvegarde.save()
+        # 3. Le champ 'marque' est déjà rempli, on n'a pas besoin de le re-remplir
+        formulaire_avec_modif.save()
         return HttpResponseRedirect("/modele/Marque_all/")
     else:
-        return render(request, "/modele/update_Modele.html", {"formulaire": formulaire_avec_modif , "id": id})
+        return render(request, "modele/update_Modele.html", {
+            "formulaire": formulaire_avec_modif,
+            "id": id
+        })
 
 
 
 def supprimerModele(request, id):
-    data = models.Modele.objects.get(pk=id)
+    data = get_object_or_404(models.Modele, pk=id)
     data.delete()
-    return HttpResponseRedirect("/modele/Modele_all/")
+    return HttpResponseRedirect("/marque/Marque_all/")
